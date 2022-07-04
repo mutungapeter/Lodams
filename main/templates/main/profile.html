@@ -1,0 +1,12 @@
+{% if user.is_authenticated %}
+
+{% if user.is_superuser %}
+	{% include "index.html" %}
+{% elif user.student.id %}
+	{% include "index.html" %}
+{% else %}
+<a href ="{% url 'new-worker' %}">Create Worker Profile</a>
+
+{% endif %}
+
+{% endif %}

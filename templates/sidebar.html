@@ -1,0 +1,153 @@
+{% load static %}
+ <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <div class="d-flex sidebar-profile">
+            
+              <div class="sidebar-profile-name">
+                <p class="sidebar-name">
+                 Portal
+                </p>
+              </div>
+            </div>
+          
+          </li>
+         <!-- <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="typcn typcn-device-desktop menu-icon"></i>
+              <span class="menu-title">Dashboard <span class=""></span></span>
+            </a>
+          </li>-->
+          {% if user.is_superuser %}
+
+          
+         <!-- <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="typcn typcn-th-small-outline menu-icon"></i>
+              <span class="menu-title">Manage Users</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="#">Registered Users</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'register' %}">New User</a></li>
+                
+              </ul>
+            </div>
+          </li>-->
+          {% endif %}
+          {% if user.is_admin %}
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+              <i class="typcn typcn-film menu-icon"></i>
+              <span class="menu-title">Results</span>
+              
+            </a>
+            <div class="collapse" id="form-elements">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="{% url 'new-result' %}">Add Results</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'results' %}">Manage Results</a></li>
+               
+              </ul>
+            </div>
+          </li>
+          {% endif  %}
+        {% if user.is_authenticated  %}
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="typcn typcn-th-small-outline menu-icon"></i>
+              <span class="menu-title">My Results</span>
+             
+            </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'my-results' %}">View my Results</a></li>
+              </ul>
+            </div>
+          </li>
+          {% endif  %}
+         
+{% if user.is_admin %}
+         <!-- <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="typcn typcn-th-small-outline menu-icon"></i>
+              <span class="menu-title">My Courses</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">View Courses Assigned to Me</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="typcn typcn-th-small-outline menu-icon"></i>
+              <span class="menu-title">My Students</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'my-students' %}">View Students assigned to Me</a></li>
+              </ul>
+            </div>
+          </li>-->
+       {% endif %}   
+       {% if user.is_superuser %}
+      <!-- <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="typcn typcn-th-small-outline menu-icon"></i>
+              <span class="menu-title">Manage Staff</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'staffs' %}">Registered Staff</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{}% url 'new-staff' %}">New Staff</a></li>
+                
+              </ul>
+            </div>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="typcn typcn-th-small-outline menu-icon"></i>
+              <span class="menu-title">Manage Students</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'students' %}">Registered Students</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'new-student' %}">New student</a></li>
+        
+              </ul>
+            </div>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="typcn typcn-th-small-outline menu-icon"></i>
+              <span class="menu-title">Manage Intakes</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="#">Registered Intakes</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'new-intake' %}">New intake</a></li>
+        
+              </ul>
+            </div>
+          </li>-->
+{% endif %}
+
+
+
+         
+        </ul>
+       <!-- <ul class="sidebar-legend">
+          <li>
+            <p class="sidebar-menu-title">Category</p>
+          </li>
+          <li class="nav-item"><a href="#" class="nav-link">#Sales</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">#Marketing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">#Growth</a></li>
+        </ul>-->
+      </nav>

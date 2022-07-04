@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}               
+   
+
+<style>
+  .button{
+    background-color: danger;
+  }
+</style>
+ <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+           <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Results</h4>
+                  
+                  <div class="table-responsive pt-3">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>Course</th>
+                          <th>Student</th>
+                          <th>Subject</th>
+                          <th>Cat</th>
+                          <th>Exam</th>
+                          <th>Total</th>
+                          <th>Status</th>
+                          <th>update result</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                            {% for result in results %}
+                        <tr>
+                          
+                          <td>
+                            {{forloop.counter}}
+                          </td>
+                          <td>
+                            {{result.course}}
+                          </td>
+                          <td>
+                            {{result.student}}
+                          </td>
+                          <td>
+                            {{result.subject}}
+                          </td>
+                          <td>
+                            {{result.cat_marks}}
+                          </td>
+                          <td>
+                            {{result.exam_marks}}
+                          </td>
+                          <td>
+                            {{result.total}}
+
+                          </td>
+                          <td>
+                            {{result.status}}
+                          </td>
+
+
+
+                        <td>
+                            <a href="{% url 'update-result' result.pk %}" class ="btn btn-success bg-success btn-sm">Update</a>
+                          </td>
+                        </tr>
+                         {% endfor %}
+                </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--content wrapper-->
+
+
+{% endblock content %}

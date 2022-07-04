@@ -1,0 +1,199 @@
+
+{% load static %}
+<!--LOGIN-->
+
+        <!DOCTYPE html>
+<html>
+    
+<head>
+  <title>Results portal | Login</title>
+  <link rel="stylesheet" href="{% static 'bootstrap//css/bootstrap.min.css' %}" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="{% static 'jquery/jquery.min.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static  'vendors/typicons.font/font/typicons.css' %}">
+    <link rel="stylesheet" href="{% static  'vendors/css/vendor.bundle.base.css' %}">
+    <!-- endinject --> 
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{% static  'css/vertical-layout-light/style.css' %}">
+     <link rel="stylesheet" href="{% static  'css/vertical-layout-light/style.css' %}">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="{% static  ' fontawesom/css/font-awesome,css' %}" />
+      <script src="{% static 'js/all.js' %}"></script>
+
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      /*background: #7abecc !important;*/
+      background: #ecf0f5 !important;
+     
+
+    }
+    .user_card {
+      width: 350px;
+      margin-top: auto;
+      margin-bottom: auto;
+      background: #ffffff ;
+      
+     
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 5px;
+
+    }
+    .bgk{
+      background: #c93a79;
+
+    }
+
+    .form_container {
+      margin-top: 20px;
+    }
+
+    #form-title{
+      color: #fff;
+      
+    }
+
+    .login_btn {
+      width: 100%;
+      background: #33ccff !important;
+      color: white !important;
+    }
+    .login_btn:focus {
+      box-shadow: none !important;
+      outline: 0px !important;
+    }
+    .login_container {
+      padding: 0 2rem;
+    }
+    .input-group-text {
+      background: #f7ba5b !important;
+      color: white !important;
+      border: 0 !important;
+      border-radius: 0.25rem 0 0 0.25rem !important;
+    }
+    .input_user,
+    .input_pass:focus {
+      box-shadow: none !important;
+      outline: 0px !important;
+    }
+
+    #messages{
+      background-color: grey;
+      color: #fff;
+      padding: 10px;
+      margin-top: 10px;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+      <div class="user_card">
+        <div class="d-flex justify-content-center">
+
+
+          <!--<h3 id="form-title" class="text-dark">LOGIN</h3>-->
+        </div>
+        <div class="text-center">
+                  <img src="{% static 'images/logo.jpg' %}"
+                  style="width: 250px; width: 200px;
+    height: 150px;
+" alt="logo">
+                  <h1 class="mt-1 mb-5 pb-1 ">Welcome</h1>
+                  <div>To login enter your Email as username and Password to Login
+
+                  </div>
+                </div>
+        <div class="d-flex justify-content-center form_container">
+          <form method="POST" action="">
+
+<!--
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                    <span class="h1 fw-bold mb-0">Logo</span>
+                  </div>-->
+            {% csrf_token %}
+            <div>Employee No/Admission No</div>
+            <div class="input-group mb-3">
+              <div class="input-group-append">
+                
+               <!--<span class="input-group-text"><i class="fas fa-user"></i></span>-->
+              </div>
+              <input type="text" name="username" placeholder="Username" class="form-control">
+            </div>
+            <div class="align-left">Password</div>
+            <div class="input-group mb-2">
+              <div class="input-group-append">
+                <!--<span class="input-group-text"><i class="fas fa-key"></i></span>-->
+              </div>
+                <input type="password" name="password" placeholder="Password" class="form-control" >
+            </div>
+
+              <div class="d-flex justify-content-center mt-3 login_container">
+                <input class="btn login_btn" type="submit" value="Login">
+                </div>
+
+
+
+          </form>
+
+        </div>
+    
+ 
+
+        <div class="mt-4">
+          <div class="d-flex justify-content-center links">
+            Forgot password? <a href="{% url 'reset_passowrd' %}" class="ml-2 text-info">Reset Password</a>
+          </div>
+      
+        </div>
+        <div class="mt-4">
+          <div class="d-flex justify-content-center links">
+          Create Account <a href="#" class="ml-2 text-info">Create Account</a>
+          </div>
+      
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static  'vendors/js/vendor.bundle.base.js' %}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="{% static  'js/off-canvas.js' %}"></script>
+    <script src="{% static  'js/hoverable-collapse.js' %}"></script>
+    <script src="{% static  'js/template.js' %}"></script>
+    <script src="{% static  'js/settings.js' %}"></script>
+    <script src="{% static  'js/todolist.js' %}"></script>
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <script src="{% static  'vendors/progressbar.js/progressbar.min.js' %}"></script>
+    <script src="{% static  'vendors/chart.js/Chart.min.js' %}"></script>
+    <!-- End plugin js for this page -->
+    <!-- Custom js for this page-->
+    <script src="{% static  'js/dashboard.js' %}"></script>
+</body>
+
+</html>

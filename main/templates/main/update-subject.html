@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="main-panel">        
+    <div class="content-wrapper">
+        <div class="col-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Update Subject</h4>
+                  <form class="form-sample" class="" action=""  method="post" enctype="multipart/form-data">
+                    <p class="card-description">
+                     
+                    </p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label"></label>
+                          <div class="col-sm-9">
+							 {% csrf_token %}
+                             {{form | crispy}}
+                          <div class="text-center mt-3">
+                                <button type="submit" class="btn btn-lg btn-info">Submit</button>
+                          </div>
+                        
+                          </div>
+                        </div>
+                      </div>
+                      </form> 
+    </div>
+</div>  
+{% endblock content%}

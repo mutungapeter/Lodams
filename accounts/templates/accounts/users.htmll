@@ -1,0 +1,177 @@
+{% extends "users/users-base.html" %}
+
+{% block content %}
+<div class="d-flex flex-column-fluid">
+                            <!--begin::Container-->
+                            <div class="container-fluid">
+                                <!--begin::Advance Table Widget 1-->
+                                <div class="card card-custom gutter-b">
+                                    <!--begin::Header-->
+                                    <div class="card-header border-0 py-2">
+                                        <h3 class="card-title align-items-start flex-column">
+                                            <span class="card-label font-weight-bolder text-dark">All Staff</span>
+                                            <span class="text-muted mt-3 font-weight-bold font-size-sm">Staff Details</span>
+                                        </h3>    
+                                        <div class="card-toolbar">
+                                            <a href="{% url 'new-staff' %}" class="btn btn-success font-weight-bolder font-size-sm">
+                                                <span class="svg-icon svg-icon-md svg-icon-white">
+                                                    <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Add-user.svg-->
+                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                            <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                                            <path d="M18,8 L16,8 C15.4477153,8 15,7.55228475 15,7 C15,6.44771525 15.4477153,6 16,6 L18,6 L18,4 C18,3.44771525 18.4477153,3 19,3 C19.5522847,3 20,3.44771525 20,4 L20,6 L22,6 C22.5522847,6 23,6.44771525 23,7 C23,7.55228475 22.5522847,8 22,8 L20,8 L20,10 C20,10.5522847 19.5522847,11 19,11 C18.4477153,11 18,10.5522847 18,10 L18,8 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                                                            <path d="M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"></path>
+                                                        </g>
+                                                    </svg>
+                                                    <!--end::Svg Icon-->
+                                                </span>Add New Staff</a>
+                                        </div>
+
+                                    
+                                    </div>
+                                    <!--end::Header-->
+                                    <!--begin::Body-->
+                                    <div class="card-body py-0">
+                                        <!--begin::Table-->
+                                        <div class="table-responsive">
+                                            <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
+                                                <thead>
+                                                    <tr class="text-left">
+                                                        <td>Number</td>
+                                                        <td>Username</td>
+                                                        <td>Name</td>
+                                                        <td>Email</td>                                                  
+                                                        <td>Phone</td>
+                                                        <td>Course</td>
+                                                        <td>Subject</td>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                              {% for user in users_list %} 
+                                                <tr>
+                                                    <td>{{forloop.counter}}</td>
+                                                    <td>{{user.email}}</td>
+                                                    <td>{{user.first_name}}</td>
+                                                    <td>{{user.last_name}}</td>
+                                                    <td>{{user.is_active}}</td>
+                                                    <td>{{user.is_admin}}</td>
+                                                    <td>{{user.date_joined}}</td>
+                                                    
+                                                </tr>   
+                                            {% endfor %}
+                                                </tbody>
+                                            
+                                            </table>
+                                        </div>
+                                        <!--end::Table-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Advance Table Widget 1-->
+                                
+                            </div>
+</div>
+                        
+  
+{% endblock content %}
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Results portal | Home</title>
+    <!-- base:css -->
+    <link rel="stylesheet" href="{% static  'vendors/typicons.font/font/typicons.css' %}">
+    <link rel="stylesheet" href="{% static  'vendors/css/vendor.bundle.base.css' %}">
+    <!-- endinject --> 
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{% static  'css/vertical-layout-light/style.css' %}">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="{% static  'images/favicon.png' %}" />
+  </head>
+<body>
+  
+  <div class="content">
+    <div class="container">
+      <div class="row justify-content-center">
+        <!-- <div class="col-md-6 order-md-2">
+          <img src="images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid">
+        </div> -->
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-12">
+              <div class="form-block">
+                  <div class="mb-4">
+                      <h3 class="h3 text-center">RESULTS PORTAL LOGIN</h3>
+                </div>
+
+              <span class="mb-0 text-muted">
+               <!-- {% if msg %}
+                    {{ msg | safe }}
+                {% else %}
+                    Login page
+                {% endif %}-->
+              </span>
+                <form  method="post">
+                    {% csrf_token %}
+                  <div class="form-group first">
+                    <label for="username">Username</label>
+                      {{ form.username }}
+                  </div>
+                  <div class="form-group last mb-4">
+                    <label for="username">Password</label>
+                    {{ form.password }}
+                  </div>
+
+                  <div class="d-flex mb-5 align-items-center">
+                    <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+                      <input type="checkbox" checked="checked"/>
+                      <div class="control__indicator"></div>
+                    </label>
+                    <span class="ml-auto"><a href="#" class="forgot-pass">Reset Password</a></span>
+                  </div>
+
+                  <input type="submit" value="Log In" class="btn btn-pill text-white btn-block btn-info">
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+      <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static  'vendors/js/vendor.bundle.base.js' %}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="{% static  'js/off-canvas.js' %}"></script>
+    <script src="{% static  'js/hoverable-collapse.js' %}"></script>
+    <script src="{% static  'js/template.js' %}"></script>
+    <script src="{% static  'js/settings.js' %}"></script>
+    <script src="{% static  'js/todolist.js' %}"></script>
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <script src="{% static  'vendors/progressbar.js/progressbar.min.js' %}"></script>
+    <script src="{% static  'vendors/chart.js/Chart.min.js' %}"></script>
+    <!-- End plugin js for this page -->
+    <!-- Custom js for this page-->
+    <script src="{% static  'js/dashboard.js' %}"></script>
+    <!-- End -->
+ </body>
+</html>
